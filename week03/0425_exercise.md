@@ -1,1 +1,41 @@
 Q：找出 JavaScript 标准里有哪些对象是我们无法实现出来的，都有哪些特性？
+
+> 参考标准中的 9.4 Built-in Exotic Object Internal Methods and Slots
+
+- Bound Function Exotic Objects
+  - A bound function exotic object is an exotic object that wraps another function object.
+  - [[Call]]
+  - [[Construct]]
+- Array Exotic Objects
+  - An Array object is an exotic object that gives special treatment to array index property keys.
+  - [[DefineOwnProperty]]
+- String Exotic Objects
+  - A String object is an exotic object that encapsulates a String value and exposes virtual integer-indexed data properties corresponding to the individual code unit elements of the String value.
+  - [[GetOwnProperty]]
+  - [[DefineOwnProperty]]
+  - [[OwnPropertyKeys]]
+- Arguments Exotic Objects
+  - An arguments exotic object is an exotic object whose array index properties map to the formal parameters bindings of an invocation of its associated ECMAScript function.
+- Integer-Indexed Exotic Objects
+  - An Integer-Indexed exotic object is an exotic object that performs special handling of integer index property keys.
+  - [[GetOwnProperty]]
+  - [[HasProperty]]
+  - [[DefineOwnProperty]]
+  - [[Get]]
+  - [[Set]]
+  - [[OwnPropertyKeys]]
+- Module Namespace Exotic Objects
+  - A module namespace exotic object is an exotic object that exposes the bindings exported from an ECMAScript Module.
+  - [[SetPrototypeOf]]
+  - [[IsExtensible]]
+  - [[PreventExtensions]]
+  - [[GetOwnProperty]]
+  - [[DefineOwnProperty]]
+  - [[HasProperty]]
+  - [[Get]]
+  - [[Set]]
+  - [[Delete]]
+  - [[OwnPropertyKeys]]
+- Immutable Prototype Exotic Objects
+  - An immutable prototype exotic object is an exotic object that has a [[Prototype]] internal slot that will not change once it is initialized.
+  - [[SetPrototypeOf]]
