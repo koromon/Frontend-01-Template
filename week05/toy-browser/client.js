@@ -1,4 +1,7 @@
 const net = require("net");
+const parser = require("./parser.js");
+const util = require("util");
+
 class Request {
   // method,url = host + port + path
   // body: k/v
@@ -176,14 +179,14 @@ class TrunkedBodyParser {
     if (this.current === this.WAITING_LENGTH) {
       // 判断是否改变状态
       if (char === "\r") {
-        console.log(JSON.stringify(char), this.length);
+        // console.log(JSON.stringify(char), this.length);
         if (this.length === 0) {
           this.isFinished = true;
         }
         this.current = this.WAITING_LENGTH_LINE_END;
       } else {
-        this.length *= 10;
-        this.length += char.charCodeAt(0) - "0".charCodeAt(0);
+        this.length *= 16;
+        this.length += parseInt(char, 16);
       }
     } else if (this.current === this.WAITING_LENGTH_LINE_END) {
       if (char === "\n") {
@@ -231,4 +234,6 @@ void (async function () {
   console.log("=====start====");
   console.log(response);
   console.log("=====end====");
+  let dom = parser.parseHTML(response.body);
+  console.log(util.inspect(dom, { showHidden: true, depth: null }));
 })();
