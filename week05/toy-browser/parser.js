@@ -1,7 +1,10 @@
+/* eslint-disable */
+
 const util = require("util");
 const EOF = Symbol("EOF"); // EOF: End of File
 const cssParser = require("./cssParser");
 require;
+const layout = require("./layout");
 let currentToken = null;
 let currentAttribute = null;
 let currentTextNode = null;
@@ -51,6 +54,8 @@ function emit(token) {
       if (top.tagName === "style") {
         cssParser.addCSSRules(top.children[0].content);
       }
+      // 根据不同的文档流在不同的地方进行 layout，如果是正常流可以在 startTag 的时候就能进行 layout
+      layout(top);
       stack.pop();
     }
     currentTextNode = null;

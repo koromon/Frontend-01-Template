@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/koromon/Frontend-01-Template#readme",
   "dependencies": {
-    "css": "^2.2.4"
+    "css": "^2.2.4",
+    "images": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0"
   }
 }

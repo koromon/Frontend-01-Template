@@ -1,6 +1,8 @@
 const net = require("net");
 const parser = require("./parser.js");
+const render = require("./render.js");
 const util = require("util");
+const images = require("images");
 
 class Request {
   // method,url = host + port + path
@@ -231,9 +233,12 @@ void (async function () {
   });
 
   let response = await request.send();
-  console.log("=====start====");
-  console.log(response);
-  console.log("=====end====");
+  // console.log("=====start====");
+  // console.log(response);
+  // console.log("=====end====");
   let dom = parser.parseHTML(response.body);
+  let viewport = images(800, 600);
+  render(viewport, dom.children[0].children[3].children[1].children[3]);
+  viewport.save("viewport.jpg");
   console.log(util.inspect(dom, { showHidden: true, depth: null }));
 })();
