@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let values = [];
+    // 把全部CSS属性分类
+    let styleObj = getComputedStyle(document.body);
+    for (const key of Object.keys(styleObj)) {
+      if (key < 280) {
+        console.log(key, styleObj[key]);
+        values.push(styleObj[key])
+      }
+    }
+    console.log(values.join());
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
