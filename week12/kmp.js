@@ -19,7 +19,11 @@ function find(source, pattern) {
   return false;
 }
 
+console.log("====", find("abcxxyz", "xy"));
+
 function kmp(source, pattern) {
+  // 比较pattern中相似的字符，每次消费后可以快速回到对应的位置（因为前面的字符已经判断过是一样的，所以只要接着后面不一样的开始匹配即可）
+  // abcabx => [0,0,0,1,2,0]
   let table = new Array(pattern.length).fill(0);
   let k = 0;
   for (let j = 1; j < pattern.length; j++) {
