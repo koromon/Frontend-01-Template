@@ -53,6 +53,67 @@ class Carousel {
     };
     setTimeout(nextPic, 1000);
 
+    root.addEventListener("mousedown", (event) => {
+      let startX = event.clientX,
+        startY = event.clientY;
+      let nextPosition = (position + 1) % children.length;
+      let lastPosition = (position - 1 + children.length) % children.length;
+      let current = root.root.childNodes[position];
+      let next = root.root.childNodes[nextPosition];
+      let last = root.root.childNodes[lastPosition];
+
+      current.style.transition = "ease 0s";
+      next.style.transition = "ease 0s";
+      last.style.transition = "ease 0s";
+
+      current.style.transform = `translateX(${-500 * position}px)`;
+      next.style.transform = `translateX(${500 - 500 * nextPosition}px)`;
+      last.style.transform = `translateX(${-500 - 500 * lastPosition}px)`;
+
+      let move = (event) => {
+        current.style.transform = `translateX(${
+          event.clientX - startX - 500 * position
+        }px)`;
+        next.style.transform = `translateX(${
+          event.clientX - startX + 500 - 500 * nextPosition
+        }px)`;
+        last.style.transform = `translateX(${
+          event.clientX - startX - 500 - 500 * lastPosition
+        }px)`;
+        // console.log(event.clientX - startX, event.clientY - startY);
+      };
+      let up = (event) => {
+        let offset = 0;
+
+        if (event.clientX - startX > 250) {
+          offset = 1;
+        } else if (event.clientX - startX < -250) {
+          offset = -1;
+        }
+
+        // 置空相当于打开动画
+        current.style.transition = "";
+        next.style.transition = "";
+        last.style.transition = "";
+
+        current.style.transform = `translateX(${
+          offset * 500 - 500 * position
+        }px)`;
+        next.style.transform = `translateX(${
+          offset * 500 + 500 - 500 * nextPosition
+        }px)`;
+        last.style.transform = `translateX(${
+          offset * 500 - 500 - 500 * lastPosition
+        }px)`;
+
+        position = (position - offset + children.length) % children.length; // 调整位置
+        document.removeEventListener("mousemove", move);
+        document.removeEventListener("mouseup", up);
+      };
+      document.addEventListener("mousemove", move);
+      document.addEventListener("mouseup", up);
+    });
+
     return root;
   }
 
