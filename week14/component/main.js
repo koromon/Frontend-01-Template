@@ -1,5 +1,7 @@
-// import { create, Text, Wrapper } from "./createElement";
+import { create, Text, Wrapper } from "./createElement";
 // import { Carousel } from "./carousel.view";
+import { Timeline, Animation } from "../../week15/animation/animation";
+import { cubicBezier } from "../../week15/animation/cubicBezier";
 
 class Carousel {
   // config
@@ -27,29 +29,65 @@ class Carousel {
 
     let position = 0;
 
+    // 动画相关
+    let ease = cubicBezier(0.25, 0.1, 0.25, 1);
+    let tl = new Timeline();
+
     let nextPic = () => {
       let nextPosition = (position + 1) % this.data.length;
 
       let current = children[position];
       let next = children[nextPosition];
 
+      // 重置动画线
+      tl.restart();
+
+      tl.add(
+        new Animation(
+          current.style,
+          "transform",
+          -100 * position,
+          -100 - 100 * position,
+          500,
+          0,
+          ease,
+          (v) => `translateX(${v}%)`
+        )
+      );
+      tl.add(
+        new Animation(
+          next.style,
+          "transform",
+          100 - 100 * nextPosition,
+          -100 * nextPosition,
+          500,
+          0,
+          ease,
+          (v) => `translateX(${v}%)`
+        )
+      );
+      // 启动动画
+      tl.start();
+
       // 取消动画效果
-      current.style.transition = "ease 0s";
-      next.style.transition = "ease 0s";
+      // current.style.transition = "ease 0s";
+      // next.style.transition = "ease 0s";
 
-      current.style.transform = `translateX(${-100 * position}%)`;
-      next.style.transform = `translateX(${100 - 100 * nextPosition}%)`;
+      // current.style.transform = `translateX(${-100 * position}%)`;
+      // next.style.transform = `translateX(${100 - 100 * nextPosition}%)`;
 
-      setTimeout(() => {
-        // 增加动画效果
-        current.style.transition = "ease 0.5s";
-        next.style.transition = "ease 0.5s";
+      // setTimeout(() => {
+      //   // 增加动画效果
+      //   current.style.transition = "ease 0.5s";
+      //   next.style.transition = "ease 0.5s";
 
-        current.style.transform = `translateX(${-100 - 100 * position}%)`;
-        next.style.transform = `translateX(${-100 * nextPosition}%)`;
+      //   current.style.transform = `translateX(${-100 - 100 * position}%)`;
+      //   next.style.transform = `translateX(${-100 * nextPosition}%)`;
 
-        position = nextPosition;
-      }, 16); // 增加定时器，动画效果才会生效，因为动画效果是一帧一帧的生效
+      //   position = nextPosition;
+      // }, 16); // 增加定时器，动画效果才会生效，因为动画效果是一帧一帧的生效
+      position = nextPosition;
+
       setTimeout(nextPic, 3000);
     };
     setTimeout(nextPic, 1000);
