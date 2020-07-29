@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+    }
+
+    #block {
+      transform: translate(0, 0);
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="block" style="transform: translate(0, 0)"></div>
+  <script src="./gesture.js"></script>
+  <script>
+    // 禁止相关默认属性
+    window.addEventListener("contextmenu", event => event.preventDefault());
+    document.addEventListener("selectstart", event => event.preventDefault());
+    document.addEventListener("touchmove", event => event.preventDefault(), {
+      passive: false
+    });
+
+    enableGesture(document.body);
+
+    let x = 0, y = 0;
+
+    let myBlock = document.querySelector("#block")
+      ;
+    document.body.addEventListener("pan", ({ detail }) => {
+      myBlock.style.transform = `translate(${x + detail.clientX - detail.startX}px,${y + detail.clientY - detail.startY}px)`;
+    })
+    document.body.addEventListener("panend", ({ detail }) => {
+      x = (x + detail.clientX - detail.startX);
+      y = (y + detail.clientY - detail.startY);
+    })
+  </script>
+</body>
+
+</html>

@@ -34,7 +34,6 @@ export class Timeline {
 
       object[property] = template(value);
     }
-    console.log("tick");
     if (animations.length) {
       this.requestID = requestAnimationFrame(() => this.tick());
     }
