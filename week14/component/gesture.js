@@ -124,8 +124,8 @@ export function enableGesture(element) {
   };
 
   let end = (point, context) => {
-    console.log("point", point);
-    console.log("context", context);
+    // console.log("point", point);
+    // console.log("context", context);
     if (context.isPan) {
       let dx = point.clientX - context.startX,
         dy = point.clientY - context.startY;
