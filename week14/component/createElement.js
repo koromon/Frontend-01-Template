@@ -61,6 +61,10 @@ export class Wrapper {
     }
   }
 
+  getAttribute(name) {
+    return this.root.getAttribute(name);
+  }
+
   appendChild(child) {
     this.children.push(child);
   }
@@ -78,5 +82,13 @@ export class Wrapper {
 
   get style() {
     return this.root.style;
+  }
+
+  get classList() {
+    return this.root.classList;
+  }
+
+  set innerText(text) {
+    return (this.root.innerText = text);
   }
 }

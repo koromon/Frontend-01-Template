@@ -1466,6 +1466,11 @@ camelcase@^5.0.0:
   resolved "https://registry.npm.taobao.org/camelcase/download/camelcase-5.3.1.tgz?cache=0&sync_timestamp=1589682790492&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcamelcase%2Fdownload%2Fcamelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha1-48mzFWnhBoEd8kL3FXJaH0xJQyA=
 
+camelcase@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npm.taobao.org/camelcase/download/camelcase-6.0.0.tgz?cache=0&sync_timestamp=1589682790492&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcamelcase%2Fdownload%2Fcamelcase-6.0.0.tgz#5259f7c30e35e278f1bdc2a4d91230b37cad981e"
+  integrity sha1-Uln3ww414njxvcKk2RIws3ytmB4=
+
 caniuse-lite@^1.0.30001093:
   version "1.0.30001099"
   resolved "https://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30001099.tgz?cache=0&sync_timestamp=1594495316623&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcaniuse-lite%2Fdownload%2Fcaniuse-lite-1.0.30001099.tgz#540118fcc6842d1fde62f4ee5521d1ec6afdb40e"
@@ -1755,6 +1760,39 @@ crypto-browserify@^3.11.0:
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
     randomfill "^1.0.3"
+
+css-loader@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.npm.taobao.org/css-loader/download/css-loader-4.2.1.tgz#9f48fd7eae1219d629a3f085ba9a9102ca1141a7"
+  integrity sha1-n0j9fq4SGdYpo/CFupqRAsoRQac=
+  dependencies:
+    camelcase "^6.0.0"
+    cssesc "^3.0.0"
+    icss-utils "^4.1.1"
+    loader-utils "^2.0.0"
+    normalize-path "^3.0.0"
+    postcss "^7.0.32"
+    postcss-modules-extract-imports "^2.0.0"
+    postcss-modules-local-by-default "^3.0.3"
+    postcss-modules-scope "^2.2.0"
+    postcss-modules-values "^3.0.0"
+    postcss-value-parser "^4.1.0"
+    schema-utils "^2.7.0"
+    semver "^7.3.2"
+
+css@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/css/download/css-3.0.0.tgz?cache=0&sync_timestamp=1593663543619&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcss%2Fdownload%2Fcss-3.0.0.tgz#4447a4d58fdd03367c516ca9f64ae365cee4aa5d"
+  integrity sha1-REek1Y/dAzZ8UWyp9krjZc7kql0=
+  dependencies:
+    inherits "^2.0.4"
+    source-map "^0.6.1"
+    source-map-resolve "^0.6.0"
+
+cssesc@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/cssesc/download/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
+  integrity sha1-N3QZGZA7hoVl4cCep0dEXNGJg+4=
 
 cyclist@^1.0.1:
   version "1.0.1"
@@ -2627,6 +2665,13 @@ iconv-lite@0.4.24:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
+icss-utils@^4.0.0, icss-utils@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npm.taobao.org/icss-utils/download/icss-utils-4.1.1.tgz#21170b53789ee27447c2f47dd683081403f9a467"
+  integrity sha1-IRcLU3ie4nRHwvR91oMIFAP5pGc=
+  dependencies:
+    postcss "^7.0.14"
+
 ieee754@^1.1.4:
   version "1.1.13"
   resolved "https://registry.npm.taobao.org/ieee754/download/ieee754-1.1.13.tgz#ec168558e95aa181fd87d37f55c32bbcb6708b84"
@@ -2649,6 +2694,11 @@ imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.npm.taobao.org/imurmurhash/download/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
+
+indexes-of@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/indexes-of/download/indexes-of-1.0.1.tgz#f30f716c8e2bd346c7b67d3df3915566a7c05607"
+  integrity sha1-8w9xbI4r00bHtn0985FVZqfAVgc=
 
 infer-owner@^1.0.3:
   version "1.0.4"
@@ -3026,6 +3076,15 @@ loader-utils@^1.2.3, loader-utils@^1.4.0:
     big.js "^5.2.2"
     emojis-list "^3.0.0"
     json5 "^1.0.1"
+
+loader-utils@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/loader-utils/download/loader-utils-2.0.0.tgz#e4cace5b816d425a166b5f097e10cd12b36064b0"
+  integrity sha1-5MrOW4FtQloWa18JfhDNErNgZLA=
+  dependencies:
+    big.js "^5.2.2"
+    emojis-list "^3.0.0"
+    json5 "^2.1.2"
 
 locate-path@^3.0.0:
   version "3.0.0"
@@ -3631,6 +3690,62 @@ posix-character-classes@^0.1.0:
   resolved "https://registry.npm.taobao.org/posix-character-classes/download/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
   integrity sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
 
+postcss-modules-extract-imports@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/postcss-modules-extract-imports/download/postcss-modules-extract-imports-2.0.0.tgz#818719a1ae1da325f9832446b01136eeb493cd7e"
+  integrity sha1-gYcZoa4doyX5gyRGsBE27rSTzX4=
+  dependencies:
+    postcss "^7.0.5"
+
+postcss-modules-local-by-default@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.npm.taobao.org/postcss-modules-local-by-default/download/postcss-modules-local-by-default-3.0.3.tgz?cache=0&sync_timestamp=1595733620602&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-modules-local-by-default%2Fdownload%2Fpostcss-modules-local-by-default-3.0.3.tgz#bb14e0cc78279d504dbdcbfd7e0ca28993ffbbb0"
+  integrity sha1-uxTgzHgnnVBNvcv9fgyiiZP/u7A=
+  dependencies:
+    icss-utils "^4.1.1"
+    postcss "^7.0.32"
+    postcss-selector-parser "^6.0.2"
+    postcss-value-parser "^4.1.0"
+
+postcss-modules-scope@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npm.taobao.org/postcss-modules-scope/download/postcss-modules-scope-2.2.0.tgz#385cae013cc7743f5a7d7602d1073a89eaae62ee"
+  integrity sha1-OFyuATzHdD9afXYC0Qc6iequYu4=
+  dependencies:
+    postcss "^7.0.6"
+    postcss-selector-parser "^6.0.0"
+
+postcss-modules-values@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/postcss-modules-values/download/postcss-modules-values-3.0.0.tgz#5b5000d6ebae29b4255301b4a3a54574423e7f10"
+  integrity sha1-W1AA1uuuKbQlUwG0o6VFdEI+fxA=
+  dependencies:
+    icss-utils "^4.0.0"
+    postcss "^7.0.6"
+
+postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.npm.taobao.org/postcss-selector-parser/download/postcss-selector-parser-6.0.2.tgz#934cf799d016c83411859e09dcecade01286ec5c"
+  integrity sha1-k0z3mdAWyDQRhZ4J3Oyt4BKG7Fw=
+  dependencies:
+    cssesc "^3.0.0"
+    indexes-of "^1.0.1"
+    uniq "^1.0.1"
+
+postcss-value-parser@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npm.taobao.org/postcss-value-parser/download/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
+  integrity sha1-RD9qIM7WSBor2k+oUypuVdeJoss=
+
+postcss@^7.0.14, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6:
+  version "7.0.32"
+  resolved "https://registry.npm.taobao.org/postcss/download/postcss-7.0.32.tgz#4310d6ee347053da3433db2be492883d62cec59d"
+  integrity sha1-QxDW7jRwU9o0M9sr5JKIPWLOxZ0=
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/process-nextick-args/download/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -3988,7 +4103,7 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
-schema-utils@^2.6.5:
+schema-utils@^2.6.5, schema-utils@^2.7.0:
   version "2.7.0"
   resolved "https://registry.npm.taobao.org/schema-utils/download/schema-utils-2.7.0.tgz?cache=0&sync_timestamp=1590789322916&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fschema-utils%2Fdownload%2Fschema-utils-2.7.0.tgz#17151f76d8eae67fbbf77960c33c676ad9f4efc7"
   integrity sha1-FxUfdtjq5n+793lgwzxnatn078c=
@@ -4023,6 +4138,11 @@ semver@^6.3.0:
   version "6.3.0"
   resolved "https://registry.npm.taobao.org/semver/download/semver-6.3.0.tgz?cache=0&sync_timestamp=1589682805026&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsemver%2Fdownload%2Fsemver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha1-7gpkyK9ejO6mdoexM3YeG+y9HT0=
+
+semver@^7.3.2:
+  version "7.3.2"
+  resolved "https://registry.npm.taobao.org/semver/download/semver-7.3.2.tgz?cache=0&sync_timestamp=1589682805026&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsemver%2Fdownload%2Fsemver-7.3.2.tgz#604962b052b81ed0786aae84389ffba70ffd3938"
+  integrity sha1-YElisFK4HtB4aq6EOJ/7pw/9OTg=
 
 send@0.17.1:
   version "0.17.1"
@@ -4194,6 +4314,14 @@ source-map-resolve@^0.5.0:
     resolve-url "^0.2.1"
     source-map-url "^0.4.0"
     urix "^0.1.0"
+
+source-map-resolve@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.npm.taobao.org/source-map-resolve/download/source-map-resolve-0.6.0.tgz#3d9df87e236b53f16d01e58150fc7711138e5ed2"
+  integrity sha1-PZ34fiNrU/FtAeWBUPx3EROOXtI=
+  dependencies:
+    atob "^2.1.2"
+    decode-uri-component "^0.2.0"
 
 source-map-support@~0.5.12:
   version "0.5.19"
@@ -4523,6 +4651,11 @@ union-value@^1.0.0:
     get-value "^2.0.6"
     is-extendable "^0.1.1"
     set-value "^2.0.1"
+
+uniq@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/uniq/download/uniq-1.0.1.tgz#b31c5ae8254844a3a8281541ce2b04b865a734ff"
+  integrity sha1-sxxa6CVIRKOoKBVBzisEuGWnNP8=
 
 unique-filename@^1.1.1:
   version "1.1.1"
